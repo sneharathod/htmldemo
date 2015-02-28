@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<title>Flickr Image Search</title>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/search.js"></script>
+
+</head> 
+<body>
+<script type="text/javascript">
+  google.load("feeds", "1");
+</script>
+<h1>Flickr Image Search</h1>
+<div onscroll="fetchResult()">
+<form id="searchForm" >
+<input id="searchId" type="search" results="5" placeholder="Enter search text here" autofocus/>
+<input type="button" value="Go" onclick="fetchResult()">
+<div id="resultId">
+</div>
+</form>
+<script type="text/javascript">
+$(document).ready(function(){
+$(window).scroll(function () {
+   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+     findFeeds();
+   }
+});
+});
+</script>
+
+</div>
+</body>
+</html>
